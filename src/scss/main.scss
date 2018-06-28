@@ -1,0 +1,68 @@
+//variables & mixins
+@import "./variables";
+
+// meat of the matter
+html {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $white;
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-wrapper {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+
+  .dashboard-container {
+    display: block;
+    width: 315px;
+    margin: 0 auto;
+    hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid $dark;
+      padding: 0;
+    }
+    .label {
+      color: $dark;
+      font-weight: bold;
+      font-size: 12px;
+      margin: 5px 0 10px 0;
+    }
+
+
+    @import "./header";
+    @import './calendar';
+    @import "./guest";
+    @import "./footer";
+
+
+    .button-wrapper {
+      @include vertical-center();
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: $secondary;
+      margin: 25px 0 10px 0;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .card-footer-info {
+      @include vertical-center();
+      font-weight: bold;
+      margin: 5px 0 25px 0;
+      color: $dark;
+    }
+
+  }
+}
+

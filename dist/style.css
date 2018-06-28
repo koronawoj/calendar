@@ -1,0 +1,324 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #FFFFFF;
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.row {
+  display: flex;
+  width: 100%; }
+
+.app-wrapper {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto; }
+  .app-wrapper .buttons {
+    display: flex;
+    justify-content: space-between; }
+    .app-wrapper .buttons button {
+      display: flex;
+      flex: 1;
+      justify-content: center; }
+  .app-wrapper .calendar-wrapper {
+    display: block;
+    width: 315px;
+    margin: 0 auto; }
+    .app-wrapper .calendar-wrapper .pointer {
+      position: relative;
+      width: 0;
+      left: 10px;
+      border-bottom: solid 15px #cccccc;
+      border-right: solid 10px transparent;
+      border-left: solid 10px transparent; }
+      .app-wrapper .calendar-wrapper .pointer .pointer-empty {
+        position: absolute;
+        top: 2px;
+        width: 0;
+        left: -10px;
+        border-bottom: solid 15px #ffffff;
+        border-right: solid 10px transparent;
+        border-left: solid 10px transparent; }
+    .app-wrapper .calendar-wrapper .calendar {
+      background: #FFFFFF;
+      padding: 10px 20px;
+      border: solid 1px #CCCCCC;
+      font-size: 1.3rem;
+      text-align: center;
+      color: #CCCCCC;
+      width: 100%;
+      box-sizing: border-box; }
+      .app-wrapper .calendar-wrapper .calendar header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #454545;
+        cursor: default;
+        font-size: 1.4rem;
+        display: block;
+        font-weight: bold;
+        user-select: none; }
+        .app-wrapper .calendar-wrapper .calendar header .month-display {
+          align-items: center;
+          height: 40px;
+          font-size: 18px; }
+        .app-wrapper .calendar-wrapper .calendar header .month-label {
+          flex: 3; }
+        .app-wrapper .calendar-wrapper .calendar header .arrow {
+          display: flex;
+          height: 20px;
+          padding: 5px;
+          justify-content: center;
+          align-items: center;
+          flex: 1;
+          border: 1px solid #cccccc;
+          color: #CCCCCC;
+          background: url(/public/icons/arrow-right-thin.svg);
+          background-position: center;
+          background-repeat: no-repeat; }
+          .app-wrapper .calendar-wrapper .calendar header .arrow:hover {
+            cursor: pointer;
+            border: 1px solid #f6aaa9; }
+        .app-wrapper .calendar-wrapper .calendar header .arrow-left {
+          transform: rotate(180deg); }
+      .app-wrapper .calendar-wrapper .calendar .day, .app-wrapper .calendar-wrapper .calendar .different-month {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45px;
+        width: 45px;
+        box-sizing: border-box;
+        border-left: solid 1px #CCCCCC;
+        border-top: solid 1px #CCCCCC;
+        cursor: pointer;
+        transition: all .2s; }
+      .app-wrapper .calendar-wrapper .calendar .different-month {
+        transition: none; }
+      .app-wrapper .calendar-wrapper .calendar .weeks-container .week {
+        display: flex; }
+        .app-wrapper .calendar-wrapper .calendar .weeks-container .week .day:last-child {
+          border-right: solid 1px #CCCCCC; }
+        .app-wrapper .calendar-wrapper .calendar .weeks-container .week .day:hover {
+          background: #EFEFEF; }
+        .app-wrapper .calendar-wrapper .calendar .weeks-container .week .day.today {
+          background: white; }
+        .app-wrapper .calendar-wrapper .calendar .weeks-container .week .day.different-month {
+          color: #C0C0C0; }
+        .app-wrapper .calendar-wrapper .calendar .weeks-container .week .day.selected {
+          background: #ee6664;
+          color: #FFFFFF; }
+        .app-wrapper .calendar-wrapper .calendar .weeks-container .week .different-month {
+          background-color: white; }
+          .app-wrapper .calendar-wrapper .calendar .weeks-container .week .different-month:hover {
+            background-color: #ffffff;
+            cursor: auto; }
+        .app-wrapper .calendar-wrapper .calendar .weeks-container .week:first-child {
+          justify-content: flex-end; }
+          .app-wrapper .calendar-wrapper .calendar .weeks-container .week:first-child .different-month {
+            border-left: none;
+            border-top: none; }
+        .app-wrapper .calendar-wrapper .calendar .weeks-container .week:last-child {
+          justify-content: flex-start; }
+          .app-wrapper .calendar-wrapper .calendar .weeks-container .week:last-child .day {
+            border-bottom: solid 1px #CCCCCC; }
+          .app-wrapper .calendar-wrapper .calendar .weeks-container .week:last-child .different-month {
+            border-left: none;
+            border-bottom: none; }
+            .app-wrapper .calendar-wrapper .calendar .weeks-container .week:last-child .different-month:last-child {
+              border-right: none; }
+          .app-wrapper .calendar-wrapper .calendar .weeks-container .week:last-child > .different-month {
+            border-left: solid 1px #CCCCCC; }
+          .app-wrapper .calendar-wrapper .calendar .weeks-container .week:last-child > .different-month ~ .different-month {
+            border-left: none; }
+      .app-wrapper .calendar-wrapper .calendar .day-names {
+        color: #454545;
+        font-weight: bold;
+        cursor: default;
+        font-size: 1.2rem; }
+        .app-wrapper .calendar-wrapper .calendar .day-names .day {
+          cursor: default;
+          border: none; }
+          .app-wrapper .calendar-wrapper .calendar .day-names .day:hover {
+            background: inherit; }
+  .app-wrapper .dashboard-container {
+    display: block;
+    width: 315px;
+    margin: 0 auto;
+    font-size: 12px; }
+    .app-wrapper .dashboard-container hr {
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #555;
+      padding: 0; }
+    .app-wrapper .dashboard-container .header-wrapper .costs, .app-wrapper .dashboard-container .header-wrapper .star-range {
+      display: flex;
+      flex: 1; }
+    .app-wrapper .dashboard-container .header-wrapper .costs {
+      align-items: flex-end; }
+      .app-wrapper .dashboard-container .header-wrapper .costs div {
+        color: #555;
+        line-height: 1; }
+        .app-wrapper .dashboard-container .header-wrapper .costs div:first-child {
+          font-size: 24px;
+          font-weight: bold; }
+        .app-wrapper .dashboard-container .header-wrapper .costs div:last-child {
+          margin-left: 5px; }
+    .app-wrapper .dashboard-container .header-wrapper .star-range {
+      height: 40px;
+      align-items: center; }
+      .app-wrapper .dashboard-container .header-wrapper .star-range .star-ratings {
+        unicode-bidi: bidi-override;
+        color: #e5e5e5;
+        font-size: 14px;
+        height: 20px;
+        width: auto;
+        position: relative;
+        padding: 0;
+        text-shadow: 0px 1px 0 #a2a2a2;
+        margin-right: 5px; }
+        .app-wrapper .dashboard-container .header-wrapper .star-range .star-ratings div {
+          line-height: 1;
+          display: block;
+          padding: 0; }
+        .app-wrapper .dashboard-container .header-wrapper .star-range .star-ratings-top {
+          color: #3798a4;
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          overflow: hidden; }
+        .app-wrapper .dashboard-container .header-wrapper .star-range .star-ratings-bottom {
+          z-index: 0; }
+      .app-wrapper .dashboard-container .header-wrapper .star-range:last-child {
+        color: #555;
+        font-weight: bold;
+        font-size: 14px; }
+    .app-wrapper .dashboard-container .label {
+      color: #555;
+      font-weight: bold;
+      font-size: 12px;
+      margin: 5px 0; }
+    .app-wrapper .dashboard-container .data-picker-wrapper .data-picker {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #aaa;
+      padding: 5px; }
+      .app-wrapper .dashboard-container .data-picker-wrapper .data-picker div {
+        flex: 1; }
+        .app-wrapper .dashboard-container .data-picker-wrapper .data-picker div input {
+          width: 100%;
+          border: none;
+          outline: none;
+          font-size: 16px; }
+      .app-wrapper .dashboard-container .data-picker-wrapper .data-picker .arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(/public/icons/arrow-right-thin.svg);
+        background-position: center;
+        background-repeat: no-repeat; }
+    .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-toggle {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      padding: 5px;
+      border: 1px solid #aaa;
+      font-size: 16px;
+      color: #555;
+      cursor: pointer; }
+    .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-hide {
+      display: none; }
+    .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show {
+      border: 1px solid #aaa;
+      padding: 0 10px;
+      position: absolute;
+      background: #fff;
+      width: 315px;
+      box-sizing: border-box; }
+      .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .menu-row {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0; }
+        .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .menu-row .menu-person {
+          flex: 1; }
+          .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .menu-row .menu-person div:first-child {
+            font-size: 16px;
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 5px; }
+          .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .menu-row .menu-person div:last-child {
+            font-size: 14px;
+            color: #555; }
+        .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .menu-row .menu-buttons {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end; }
+          .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .menu-row .menu-buttons div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; }
+            .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .menu-row .menu-buttons div:first-child {
+              border: 1px solid #abd5e8;
+              cursor: pointer;
+              margin-right: 10px; }
+            .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .menu-row .menu-buttons div:last-child {
+              border: 1px solid #1d5f66;
+              cursor: pointer;
+              margin-left: 10px; }
+      .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .footer-info {
+        margin: 10px 0;
+        font-size: 16px;
+        color: #555; }
+      .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .btn {
+        padding: 10px 0;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px; }
+        .app-wrapper .dashboard-container .guest-picker-wrapper .dropdown-menu-show .btn div {
+          font-size: 22px;
+          color: #277d84;
+          cursor: pointer; }
+    .app-wrapper .dashboard-container .button-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #e85e61;
+      margin: 15px 0 10px 0;
+      border-radius: 3px; }
+    .app-wrapper .dashboard-container .card-footer-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      margin: 5px 0 25px 0;
+      color: #555; }
+    .app-wrapper .dashboard-container .card-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .app-wrapper .dashboard-container .card-footer .text div {
+        font-size: 16px;
+        color: #555;
+        margin: 5px 0; }
+        .app-wrapper .dashboard-container .card-footer .text div:first-child {
+          font-weight: bold; }
+      .app-wrapper .dashboard-container .card-footer .ico {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 50px;
+        background: url(/public/icons/bulb.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; }

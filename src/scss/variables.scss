@@ -1,0 +1,17 @@
+$white: #FFFFFF;
+$ltGrey: #EFEFEF;
+$mdGrey: #C0C0C0;
+$dkGrey: #CCCCCC;
+$dark: #555555;
+$primary: #3c8084;
+$secondary: #ee6664;
+$oceanLight: #abd5e8;
+$oceanDark: #1d5f66;
+$borderColor: $dkGrey;
+$ltSecondary: lighten($secondary, 45%);
+
+@mixin vertical-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

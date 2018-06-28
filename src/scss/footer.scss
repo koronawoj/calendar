@@ -1,0 +1,22 @@
+.card-footer {
+  @include vertical-center();
+  .text {
+    div {
+      font-size: 16px;
+      color: $dark;
+      margin: 5px 0;
+      &:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+  .ico {
+    height: 100px;
+    width: 50px;
+    margin: 0 10px;
+    background: url('../resources/icons/bulb.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

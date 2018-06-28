@@ -1,0 +1,56 @@
+.header-wrapper {
+  .costs, .star-range {
+    display: flex;
+    flex: 1;
+  }
+  .costs {
+    align-items: flex-end;
+    div {
+      color: $dark;
+      line-height: 1;
+      &:first-child {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      &:last-child {
+        margin-left: 5px;
+      }
+    }
+  }
+  .star-range {
+    height: 25px;
+    margin-top: 5px;
+    .star-ratings {
+      unicode-bidi: bidi-override;
+      color: $mdGrey;
+      font-size: 10px;
+      height: 30px;
+      width: auto;
+      position: relative;
+      padding: 0;
+      margin-right: 5px;
+      div {
+        line-height: 1;
+        display: block;
+        padding: 0;
+      }
+
+      &-top {
+        color: $primary;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+      &-bottom {
+        z-index: 0;
+      }
+    }
+    &:last-child {
+      color: $dark;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+}
